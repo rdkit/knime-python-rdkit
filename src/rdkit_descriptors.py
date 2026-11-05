@@ -58,6 +58,8 @@ from rdkit.Chem import  Descriptors
 #exec_path = sys.executable
 #sys.path.append(os.path.join(os.path.dirname(exec_path), 'share','RDKit','Contrib'))
 exec_path = sys.exec_prefix
+if sys.platform == 'win32':
+    exec_path = os.path.join(exec_path, 'Library')
 sys.path.append(os.path.join(exec_path, 'share','RDKit','Contrib'))
 import SA_Score
 from SA_Score import sascorer
